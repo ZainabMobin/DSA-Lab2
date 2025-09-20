@@ -1,26 +1,30 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main() {
-    const int size = 20;   
-    int salArray[size];
+int main(){
+	int size;
+	cout << "Total number of employees: ";
+	cin >> size;
 
-    // Input salaries
-    for (int i = 0; i < size; i++) {
-        cout << "Enter Salary for employee " << (i+1) << ": ";
-        cin >> salArray[i];
-    }
-// Apply increment formula
-    for (int i = 0; i < size; i++) {
-        salArray[i] = salArray[i] + salArray[i] / (i + 1);
-    }
+	int* salArray = new int[size];
 
-    // Display updated salaries
-    cout << "\nUpdated Salaries: ";
-    for (int i = 0; i < size; i++) {
-        cout << salArray[i] << " ";
-    }
-    cout << endl;
+	//input salaries
+	cout << "INPUT SALARIES OF EMPLOYEES" << endl << endl;
+	for (int i = 0; i < size; i++){
+		cout << "Employee " << (i + 1) << " : ";
+		cin >> salArray[i];
+	}
 
-    return 0;
+	//update salaries
+	for (int j = 0; j < size; j++)
+		salArray[j] = (salArray[j]+salArray[j])/(j+1);
+
+	//output updates salaries
+	cout << endl << "UPDATED SALARIES";
+	for (int i = 0; i < size; i++){
+		cout << endl << "Employee " << (i + 1) << " : " << salArray[i];
+	}
+	cout << endl;
+	delete[] salArray;
+	return 0;
 }
