@@ -42,6 +42,7 @@ int main(){
 	cout << endl;
 
 	delete[] arr;
+	//dynamically created array deleted in the end to free memory on the heap
 	system("pause");
 	return 0;
 }

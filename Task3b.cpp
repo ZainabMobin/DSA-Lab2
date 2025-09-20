@@ -17,11 +17,12 @@ int main(){
 	int iheap;
 	cout << endl << "Enter an integer (to be allocated on heap):";
 	cin >> iheap;
-	int* pint2 = new int;
-	*pint2 = iheap;
-	analyzePointer(pint2);
+	int* pInt = new int;
+	*pInt = iheap;
+	analyzePointer(pInt);
 
-	delete pint2;
+	//Version Control: changed variable name from 'pint2' to 'pInt' for better readability
+	delete pInt;
 	system("pause");
 	return 0;
 }

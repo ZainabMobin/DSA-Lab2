@@ -9,7 +9,7 @@ int main(){
 	int a = 17;
 	int *ptr = &a;
 	analyzePointer(ptr);
-	
+	//system("pause") used since the console kept closing upon running the program
 	system("pause");
 	return 0;
 }

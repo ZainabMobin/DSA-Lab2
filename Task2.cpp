@@ -12,7 +12,9 @@ int main(){
 	cout << "INPUT SALARIES OF EMPLOYEES" << endl << endl;
 	for (int i = 0; i < size; i++){
 		cout << "Employee " << (i + 1) << " : ";
-		cin >> salArray[i
+		cin >> salArray[i];
+	}
+	//Version Control: some syntax errors corrected later
 	for (int i = 0; i < size; i++){
 		cout << endl << "Employee " << (i + 1) << " : " << salArray[i];
 	}
