@@ -7,3 +7,4 @@ Date: 20th September, 2025
 - Made small changes such as adding comments which will be reflected in the history panel
 - Uploaded and Updated salary.cpp via Git Bash
 - Renamed Task4.cpp to string_reverse.cpp
+- Uploaded and Updated Practice Task 2
