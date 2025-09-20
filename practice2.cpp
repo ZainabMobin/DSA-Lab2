@@ -1,48 +1,33 @@
 #include <iostream>
+#include <cstdlib>	//for malloc() and realloc() functions
 using namespace std;
 
 int main() {
-    int n;
-    cout << "Enter the initial number of elements: ";
-    cin >> n;
+	int n;
+	cout << "Enter the size of the array:";
+	cin >> n;
+	int* arr = (int*)malloc(n*4); //5 Integers = 20 Bytes
+	for (int i = 0; i < n; i++)
+		arr[i] = i + 1;
 
-    // Dynamically allocate memory for the array
-    int* arr = new int[n];
+	for (int i = 0; i < n; i++)
+		cout <<endl<< "Element " << i + 1 << ":"<<arr[i];
 
-    // Input initial elements
-    cout << "Enter " << n << " elements:\n";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
+	cout << endl << "Enter the new size: ";
+	int newSize;
+	cin >> newSize;
+	//reallocate more memory and create a new pointer array
+	int* newArr = (int*)realloc(arr, newSize * 4);
+	arr = newArr;
+	for (int i = n; i < newSize; i++){
+		newArr[i] = i + 1;
+	}
+	for (int i = 0; i < newSize; i++)
+		cout << endl<<"Element " << i + 1 << ":" << newArr[i];
+	cout << endl;
 
-    // Resize the array to a larger size
-    int newSize;
-    cout << "Enter new size (larger than " << n << "): ";
-    cin >> newSize;
+	free(newArr);
+	system("pause");
 
-    int* newArr = new int[newSize];
-
-    // Copy old elements to new array
-    for (int i = 0; i < n; i++) {
-        newArr[i] = arr[i];
-    }
-
-    // Input additional elements
-    cout << "Enter additional elements:\n";
-    for (int i = n; i < newSize; i++) {
-        cin >> newArr[i];
-    }
-
-    // Output all elements
-    cout << "All elements after resizing:\n";
-    for (int i = 0; i < newSize; i++) {
-        cout << newArr[i] << " ";
-    }
-    cout << endl;
-
-    // Free dynamically allocated memory
-    delete[] arr;
-    delete[] newArr;
-
-    return 0;
+	return 0;
 }
